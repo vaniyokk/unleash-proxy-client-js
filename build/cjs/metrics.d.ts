@@ -4,7 +4,7 @@ export interface MetricsOptions {
     appName: string;
     metricsInterval: number;
     disableMetrics?: boolean;
-    url: URL | string;
+    url: string;
     clientKey: string;
     fetch: any;
     headerName: string;
