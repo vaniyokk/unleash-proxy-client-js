@@ -1,6 +1,4 @@
-/// <reference types="node" />
 import { TinyEmitter } from 'tiny-emitter';
-import { URL } from "url-shim";
 import type IStorageProvider from './storage-provider';
 import InMemoryStorageProvider from './storage-provider-inmemory';
 import LocalStorageProvider from './storage-provider-local';
@@ -19,7 +17,7 @@ interface IMutableContext {
 }
 type IContext = IStaticContext & IMutableContext;
 interface IConfig extends IStaticContext {
-    url: URL | string;
+    url: string;
     clientKey: string;
     disableRefresh?: boolean;
     refreshInterval?: number;

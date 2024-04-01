@@ -1,6 +1,5 @@
 import { FetchMock } from 'jest-fetch-mock';
 import 'jest-localstorage-mock';
-import { URL } from "url-shim";
 import {
     EVENTS,
     IConfig,
@@ -1511,7 +1510,7 @@ test('Should publish ready only when the first fetch was successful', async () =
 });
 
 test('Should be able to configure UnleashClient with a URL instance', () => {
-    const url = new URL('test', 'http://localhost');
+    const url = 'http://localhost/test';
     const config: IConfig = {
         url,
         clientKey: '12',

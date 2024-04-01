@@ -1,5 +1,4 @@
 import { FetchMock } from 'jest-fetch-mock';
-import { URL } from "url-shim";
 import Metrics from './metrics';
 import { getTypeSafeRequest, parseRequestBodyWithType } from './test';
 jest.useFakeTimers();
@@ -118,7 +117,7 @@ test('should send metrics based on timer interval', async () => {
         appName: 'test',
         metricsInterval: 5,
         disableMetrics: false,
-        url: new URL('http://localhost:3000'),
+        url: 'http://localhost:3000',
         clientKey: '123',
         fetch: fetchMock,
         headerName: 'Authorization',

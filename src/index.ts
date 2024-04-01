@@ -1,5 +1,4 @@
 import { TinyEmitter } from 'tiny-emitter';
-import { URL } from "url-shim";
 import EventsHandler from './events-handler';
 import Metrics from './metrics';
 import type IStorageProvider from './storage-provider';
@@ -37,7 +36,7 @@ const isDefinedContextField = (field: string): field is DefinedField => {
 };
 
 interface IConfig extends IStaticContext {
-    url: URL | string;
+    url: string;
     clientKey: string;
     disableRefresh?: boolean;
     refreshInterval?: number;
@@ -129,7 +128,7 @@ export class UnleashClient extends TinyEmitter {
     private timerRef?: any;
     private storage: IStorageProvider;
     private refreshInterval: number;
-    private url: URL;
+    private url: string;
     private clientKey: string;
     private etag = '';
     private metrics: Metrics;
@@ -181,7 +180,7 @@ export class UnleashClient extends TinyEmitter {
         this.eventsHandler = new EventsHandler();
         this.impressionDataAll = impressionDataAll;
         this.toggles = bootstrap && bootstrap.length > 0 ? bootstrap : [];
-        this.url = url instanceof URL ? url : new URL(url);
+        this.url = url;
         this.clientKey = clientKey;
         this.headerName = headerName;
         this.customHeaders = customHeaders;
