@@ -1,3 +1,4 @@
+import { URL } from "url-shim";
 import { urlWithContextAsQuery } from './util';
 
 test('should not add paramters to URL', async () => {

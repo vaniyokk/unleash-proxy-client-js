@@ -1,7 +1,7 @@
 import { FetchMock } from 'jest-fetch-mock';
+import { URL } from "url-shim";
 import Metrics from './metrics';
 import { getTypeSafeRequest, parseRequestBodyWithType } from './test';
-
 jest.useFakeTimers();
 
 const fetchMock = fetch as FetchMock;

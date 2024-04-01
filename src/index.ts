@@ -1,9 +1,10 @@
 import { TinyEmitter } from 'tiny-emitter';
+import { URL } from "url-shim";
+import EventsHandler from './events-handler';
 import Metrics from './metrics';
 import type IStorageProvider from './storage-provider';
 import InMemoryStorageProvider from './storage-provider-inmemory';
 import LocalStorageProvider from './storage-provider-local';
-import EventsHandler from './events-handler';
 import { notNullOrUndefined, urlWithContextAsQuery } from './util';
 
 const DEFINED_FIELDS = [
@@ -492,6 +493,7 @@ export class UnleashClient extends TinyEmitter {
 }
 
 // export storage providers from root module
-export { type IStorageProvider, LocalStorageProvider, InMemoryStorageProvider };
+export { InMemoryStorageProvider, LocalStorageProvider, type IStorageProvider };
 
-export type { IConfig, IContext, IMutableContext, IVariant, IToggle };
+    export type { IConfig, IContext, IMutableContext, IToggle, IVariant };
+

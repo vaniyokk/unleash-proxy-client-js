@@ -1,7 +1,6 @@
 import { FetchMock } from 'jest-fetch-mock';
 import 'jest-localstorage-mock';
-import * as data from './test/testdata.json';
-import IStorageProvider from './storage-provider';
+import { URL } from "url-shim";
 import {
     EVENTS,
     IConfig,
@@ -9,7 +8,9 @@ import {
     IToggle,
     UnleashClient,
 } from './index';
+import IStorageProvider from './storage-provider';
 import { getTypeSafeRequest, getTypeSafeRequestUrl } from './test';
+import * as data from './test/testdata.json';
 
 jest.useFakeTimers();
 

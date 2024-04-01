@@ -1,3 +1,4 @@
+import { URL } from "url-shim";
 import { IContext } from '.';
 
 export const notNullOrUndefined = ([, value]: [string, string]) =>
